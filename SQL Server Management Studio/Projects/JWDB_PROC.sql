@@ -1,0 +1,237 @@
+use JWDB
+go
+create procedure proc2
+@sno varchar(20)
+as
+begin
+select * from Grade 
+where UserID = @sno
+end
+go
+exec dbo.proc2 '1507402068'
+go
+
+create procedure proc1
+@coursename varchar(20)
+as
+begin
+select * from Grade 
+where CourseID = 
+(select CourseID from Course 
+where CourseName = @coursename )
+end
+go
+
+exec dbo.proc1 '数值分析' 
+go
+
+
+create procedure SETNAME
+(
+@employeeid varchar(10),
+@name varchar(10)
+)
+as
+begin 
+
+update  Students
+set  UserName = @name 
+where UserID = @employeeid
+end
+
+return 
+go
+
+
+
+exec dbo.SETNAME'1507404036','李丹兰'
+exec dbo.SETNAME'1507404035','张涤天'
+exec dbo.SETNAME'1507404034','陈思嘉'
+exec dbo.SETNAME'1507404033','王吟风'
+exec dbo.SETNAME'1507404032','焦灵玥'
+exec dbo.SETNAME'1507404031','王浩'
+exec dbo.SETNAME'1507404030','沈成'
+exec dbo.SETNAME'1507404029','徐臻'
+exec dbo.SETNAME'1507404028','邹怡'
+exec dbo.SETNAME'1507404027','潘晶晶'
+exec dbo.SETNAME'1507404026','彭涛'
+exec dbo.SETNAME'1507404025','方俊杰'
+exec dbo.SETNAME'1507404024','陈佳'
+exec dbo.SETNAME'1507404023','曹水清'
+exec dbo.SETNAME'1507404022','陈思齐'
+exec dbo.SETNAME'1507404021','史煜瑶'
+exec dbo.SETNAME'1507404020','陈宇'
+exec dbo.SETNAME'1507404019','林瑞'
+exec dbo.SETNAME'1507404018','安赵桀'
+exec dbo.SETNAME'1507404017','严立喆'
+exec dbo.SETNAME'1507404016','吴心怡'
+exec dbo.SETNAME'1507404015','盛洁'
+exec dbo.SETNAME'1507404014','申文慧'
+exec dbo.SETNAME'1507404013','刘名伦'
+exec dbo.SETNAME'1507404012','凌楚凡'
+exec dbo.SETNAME'1507404011','吴晓刚'
+exec dbo.SETNAME'1507404010','巫诚'
+exec dbo.SETNAME'1507404009','赵天舒'
+exec dbo.SETNAME'1507404008','吴鹏飞'
+exec dbo.SETNAME'1507404007','邓思宇'
+exec dbo.SETNAME'1507404006','朱斌'
+exec dbo.SETNAME'1507404005','张凯雯'
+exec dbo.SETNAME'1507404004','沈依婷'
+exec dbo.SETNAME'1507404003','徐梦宇'
+exec dbo.SETNAME'1507404002','缪旻钰'
+exec dbo.SETNAME'1507404001','黄梦迪'
+exec dbo.SETNAME'1507403038','刘通'
+exec dbo.SETNAME'1507403037','孙高超'
+exec dbo.SETNAME'1507403036','钱晟扬'
+exec dbo.SETNAME'1507403035','王宁'
+exec dbo.SETNAME'1507403034','宋佳琦'
+exec dbo.SETNAME'1507403033','陶益亮'
+exec dbo.SETNAME'1507403032','章锦程'
+exec dbo.SETNAME'1507403031','席佳'
+exec dbo.SETNAME'1507403030','杨一豪'
+exec dbo.SETNAME'1507403029','张温让'
+exec dbo.SETNAME'1507403028','朱瑶'
+exec dbo.SETNAME'1507403027','顾丽逸'
+exec dbo.SETNAME'1507403026','李琳'
+exec dbo.SETNAME'1507403025','胡紫娴'
+exec dbo.SETNAME'1507403024','钱澍华'
+exec dbo.SETNAME'1507403023','卢丽婧'
+exec dbo.SETNAME'1507403022','闻琪'
+exec dbo.SETNAME'1507403021','李宏煜'
+exec dbo.SETNAME'1507403020','于聪'
+exec dbo.SETNAME'1507403019','李庆'
+exec dbo.SETNAME'1507403018','傅霞青'
+exec dbo.SETNAME'1507403017','朱鹏飞'
+exec dbo.SETNAME'1507403016','符懋学'
+exec dbo.SETNAME'1507403015','张雨佳'
+exec dbo.SETNAME'1507403014','韦琪'
+exec dbo.SETNAME'1507403013','汤淋荃'
+exec dbo.SETNAME'1507403012','叶晶晶'
+exec dbo.SETNAME'1507403011','王辛怡'
+exec dbo.SETNAME'1507403010','黄诚成'
+exec dbo.SETNAME'1507403009','邢茜'
+exec dbo.SETNAME'1507403008','卞杨奕'
+exec dbo.SETNAME'1507403007','孙家陈'
+exec dbo.SETNAME'1507403006','丁漪'
+exec dbo.SETNAME'1507403005','陈潇'
+exec dbo.SETNAME'1507403004','陈锷'
+exec dbo.SETNAME'1507403003','杨佳丽'
+exec dbo.SETNAME'1507403002','周李晶'
+exec dbo.SETNAME'1507402071','黄本琪'
+exec dbo.SETNAME'1507401042','胡垚'
+exec dbo.SETNAME'1507401041','李英洁'
+exec dbo.SETNAME'1507401040','张怡'
+exec dbo.SETNAME'1507401039','曹小利'
+exec dbo.SETNAME'1507401037','冒小坤'
+exec dbo.SETNAME'1507401036','蒋昊'
+exec dbo.SETNAME'1507401035','史鉴'
+exec dbo.SETNAME'1507401034','金晓娜'
+exec dbo.SETNAME'1507401033','王丽君'
+exec dbo.SETNAME'1507401032','周雨馨'
+exec dbo.SETNAME'1507401031','张诗雯'
+exec dbo.SETNAME'1507401030','左秋月'
+exec dbo.SETNAME'1507401029','钱程'
+exec dbo.SETNAME'1507401028','黄李阳'
+exec dbo.SETNAME'1507401027','蒋影城'
+exec dbo.SETNAME'1507401026','司业佳'
+exec dbo.SETNAME'1507401025','陈敏'
+exec dbo.SETNAME'1507401024','徐欢'
+exec dbo.SETNAME'1507401023','陈彤'
+exec dbo.SETNAME'1507401022','赵子琦'
+exec dbo.SETNAME'1507401021','李顺'
+exec dbo.SETNAME'1507401020','顾梦文'
+exec dbo.SETNAME'1507401019','胡心怡'
+exec dbo.SETNAME'1507401018','张沁'
+exec dbo.SETNAME'1507401017','王雅慧'
+exec dbo.SETNAME'1507401016','周婷婕'
+exec dbo.SETNAME'1507401015','贾逸倩'
+exec dbo.SETNAME'1507401014','乔艳艳'
+exec dbo.SETNAME'1507401013','张妍'
+exec dbo.SETNAME'1507401012','杨洋'
+exec dbo.SETNAME'1507401011','张钰娇'
+exec dbo.SETNAME'1507401010','赵伊惠'
+exec dbo.SETNAME'1507401009','张梦琪'
+exec dbo.SETNAME'1507401008','张燕'
+exec dbo.SETNAME'1507401007','王昱洲'
+exec dbo.SETNAME'1507401006','徐晨'
+exec dbo.SETNAME'1507401005','孙一林'
+exec dbo.SETNAME'1507401004','邵雪'
+exec dbo.SETNAME'1507401003','荣英子'
+exec dbo.SETNAME'1507401002','华夏'
+exec dbo.SETNAME'1507401001','秦小双'
+exec dbo.SETNAME'1509404099','吴沛毅'
+exec dbo.SETNAME'1508405017','李祥飞'
+exec dbo.SETNAME'1507402074','张子玉'
+exec dbo.SETNAME'1507402073','来诗悦'
+exec dbo.SETNAME'1507402072','洪宇'
+exec dbo.SETNAME'1507402070','尤一阳'
+exec dbo.SETNAME'1507402069','陈瑶'
+exec dbo.SETNAME'1507402068','李世旺'
+exec dbo.SETNAME'1507402067','冯润鑫'
+exec dbo.SETNAME'1507402066','陈后福'
+exec dbo.SETNAME'1507402065','沙凤梧'
+exec dbo.SETNAME'1507402064','闫格'
+exec dbo.SETNAME'1507402063','赵懿宁'
+exec dbo.SETNAME'1507402061','曾晨阳'
+exec dbo.SETNAME'1507402060','吉振远'
+exec dbo.SETNAME'1507402059','徐莉莎'
+exec dbo.SETNAME'1507402058','魏文斌'
+exec dbo.SETNAME'1507402057','丁越'
+exec dbo.SETNAME'1507402056','崔丽波'
+exec dbo.SETNAME'1507402055','宋晓华'
+exec dbo.SETNAME'1507402054','陈晔星'
+exec dbo.SETNAME'1507402053','张子依'
+exec dbo.SETNAME'1507402052','金鑫'
+exec dbo.SETNAME'1507402051','陆禹延'
+exec dbo.SETNAME'1507402050','荀跃武'
+exec dbo.SETNAME'1507402049','章苗'
+exec dbo.SETNAME'1507402048','王业流'
+exec dbo.SETNAME'1507402047','陈雪娟'
+exec dbo.SETNAME'1507402046','潘华涛'
+exec dbo.SETNAME'1507402045','丁娜'
+exec dbo.SETNAME'1507402044','周湛杰'
+exec dbo.SETNAME'1507402043','傅蕾'
+exec dbo.SETNAME'1507402042','缪静'
+exec dbo.SETNAME'1507402041','毛丰宁'
+exec dbo.SETNAME'1507402040','王紫馨'
+exec dbo.SETNAME'1507402039','汤建清'
+exec dbo.SETNAME'1507402038','陈怡静'
+exec dbo.SETNAME'1507402037','王以瑄'
+exec dbo.SETNAME'1507402036','杨雨'
+exec dbo.SETNAME'1507402035','周玥'
+exec dbo.SETNAME'1507402034','王晨'
+exec dbo.SETNAME'1507402033','冼昌宁'
+exec dbo.SETNAME'1507402032','张友亮'
+exec dbo.SETNAME'1507402031','徐仁杰'
+exec dbo.SETNAME'1507402030','陈健'
+exec dbo.SETNAME'1507402029','董文波'
+exec dbo.SETNAME'1507402028','蔡锴锴'
+exec dbo.SETNAME'1507402027','苏恩弘'
+exec dbo.SETNAME'1507402026','邵寒'
+exec dbo.SETNAME'1507402025','梁剑华'
+exec dbo.SETNAME'1507402024','彭逍'
+exec dbo.SETNAME'1507402023','李睿'
+exec dbo.SETNAME'1507402022','谭皓为'
+exec dbo.SETNAME'1507402021','陈凤南'
+exec dbo.SETNAME'1507402020','李小沛'
+exec dbo.SETNAME'1507402019','王萍'
+exec dbo.SETNAME'1507402018','贾超'
+exec dbo.SETNAME'1507402017','张裕烽'
+exec dbo.SETNAME'1507402016','周凡曾'
+exec dbo.SETNAME'1507402015','丁壮'
+exec dbo.SETNAME'1507402014','何玮钰'
+exec dbo.SETNAME'1507402013','崔嫣然'
+exec dbo.SETNAME'1507402012','张静'
+exec dbo.SETNAME'1507402011','王志鑫'
+exec dbo.SETNAME'1507402010','徐璐'
+exec dbo.SETNAME'1507402008','王现瑞'
+exec dbo.SETNAME'1507402007','徐鑫'
+exec dbo.SETNAME'1507402006','唐雪涛'
+exec dbo.SETNAME'1507402005','杨婉莹'
+exec dbo.SETNAME'1507402004','姜程耀'
+exec dbo.SETNAME'1507402003','袁烽'
+exec dbo.SETNAME'1507402002','徐娟娟'
+exec dbo.SETNAME'1507402001','陆伟峰'
+exec dbo.SETNAME'1507401038','段隐宗'
+
+go
