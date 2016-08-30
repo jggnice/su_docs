@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<moveCategory
+		id="org.eclipse.wb.swing.components.menu"
+		nextCategory="org.eclipse.wb.swing.actions"/>
+	<moveCategory
+		id="org.eclipse.wb.swing.system"/>
+	<moveCategory
+		id="org.eclipse.wb.swing.BoxLayout"/>
+	<moveCategory
+		id="org.eclipse.wb.swing.layouts"
+		nextCategory="org.eclipse.wb.swing.actions"/>
+	<moveCategory
+		id="org.eclipse.wb.swing.layouts"
+		nextCategory="org.eclipse.wb.swing.components.menu"/>
+	<moveEntry
+		id="org.eclipse.wb.swing.components javax.swing.JButton"
+		category="org.eclipse.wb.swing.components"
+		nextEntry="org.eclipse.wb.swing.components javax.swing.JCheckBox"/>
+</commands>

@@ -1,0 +1,6 @@
+package ex173;
+
+public class PanelEx173 extends JPanel
+{
+	
+}

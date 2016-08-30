@@ -1,0 +1,59 @@
+package sortlist;
+
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+import jmfmusic.MusicPlay;
+
+@SuppressWarnings("serial")
+public class MusicPanel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public MusicPanel() 
+	{
+		mp = new MusicPlay(
+				SortlistFrame.class.getResource("/audio/insleep.mp3"));
+		mp.loop();
+		setLayout(new GridLayout(0, 2, 0, 0));
+
+		JButton btnChoose = new JButton("choose");
+		btnChoose.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				chooseMusicAction(arg0);
+			}
+		});
+		add(btnChoose);
+
+		JButton btnStop = new JButton("stop");
+		btnStop.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				mp.stop();
+			}
+		});
+		add(btnStop);
+
+		JButton btnStart = new JButton("start");
+		btnStart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				mp.loop();
+			}
+		});
+		add(btnStart);
+
+	}
+
+	protected void chooseMusicAction(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

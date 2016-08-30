@@ -1,0 +1,738 @@
+package xxl;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TimerTask;
+
+import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+import resources.PIC;
+/**
+ * 
+ * @author <b>PanelForXXL
+ *
+ */
+public class PanelForXXL extends JPanel
+{
+	Person tempPerson;
+	Person lastperson = null;
+	Person currentperson = null;
+	boolean canCheck = true;
+	boolean canBlow = false;
+	boolean canClear = false;
+	boolean canDrop = true;
+	boolean canCancel = false;
+	boolean started = false;
+	boolean isEven = true;
+	static java.util.Timer timer;
+	class IconSwitchTask extends TimerTask
+	{
+		public void run()
+		{
+			switchIcon(currentperson, tempPerson);
+			canCancel = true;
+			if (currentperson.isAdjacentTo(tempPerson))
+				MusicForXXL.playcancel();
+		}
+	}
+	class CancelTask extends TimerTask
+	{
+
+		public void run()
+		{
+			if (canCancel)
+			{
+
+				timer.cancel();
+				started = false;
+				System.out.println("Timer Caneled");
+				canCancel = false;
+				currentperson.setBorderPainted(true);
+
+			}
+		}
+
+	}
+	class CheckTask extends TimerTask
+	{
+
+		public void run()
+		{
+			if (canCheck)
+			{
+				canCheck = false;
+				int size = checkAll();
+				if (size > 0)
+				{
+					canBlow = true;
+					System.out.println("canblow ? " + canBlow);
+				} else
+				{
+					timer.cancel();
+					started = false;
+					System.out.println("Timer Caneled");
+					currentperson.setBorderPainted(true);
+					canCancel = true;
+					canBlow = false;
+				}
+			}
+		}
+
+	}
+	class BlowTask extends TimerTask
+	{
+
+		public void run()
+		{
+			if (canBlow)
+			{
+				canBlow = false;
+				blowAll();
+				canClear = true;
+				System.out.println("canclear ? " + canClear);
+			} else
+			{
+				canClear = false;
+			}
+		}
+
+	}
+	class ClearTask extends TimerTask
+	{
+
+		public void run()
+		{
+			if (canClear)
+			{
+				canClear = false;
+				clearAll();
+				System.out.println("cleared");
+				canDrop = true;
+			}
+
+		}
+
+	}
+	class DropTask extends TimerTask
+	{
+
+		public void run()
+		{
+			if (canDrop)
+			{
+				canDrop = false;
+				boolean res = dropAll();
+				if (res)
+					canDrop = true;
+				else
+					canCheck = true;
+			}
+		}
+
+	}
+	class ButtonActionListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{
+
+			canCancel = false;
+			MusicForXXL.playselect();
+			if (lastperson == null)
+				lastperson = (Person) e.getSource();
+			else
+			{
+				currentperson = (Person) e.getSource();
+				if (started)
+					return;
+
+				started = true;
+
+				switchIcon(currentperson, lastperson);
+				tempPerson = lastperson;
+				lastperson = currentperson;
+				System.out.println("Timer Started");
+				timer = new java.util.Timer(true);
+				if ((checkAll() == 0))
+				{
+					timer.schedule(new IconSwitchTask(), 200);
+					timer.schedule(new CancelTask(), 5, 100);
+					return;
+				} else
+				{
+
+					canCheck = true;
+					canBlow = false;
+					canClear = false;
+					canDrop = true;
+
+					try
+					{
+
+						timer.schedule(new CheckTask(), 0, 300);
+						timer.schedule(new BlowTask(), 5, 200);
+						// if(TestTime.timecoumt>10)控制失败,不是这样启动
+						timer.schedule(new ClearTask(), 10, 100);
+						timer.schedule(new DropTask(), 150, 400);
+						timer.schedule(new CancelTask(), 5, 50);
+					} catch (Exception exp)
+					{
+					}
+
+				}
+
+			}
+		}
+	}
+	class MouseHandler extends MouseAdapter
+	{
+		@Override
+		public void mouseEntered(MouseEvent arg0)
+		{
+			Person p = (Person) arg0.getSource();
+			if (p.getIcontype() > 8)
+				return;
+			p.setIcon(ICONS.iconpp[p.getIcontype()]);
+			// System.out.println("111");
+			p.repaint();
+		}
+		@Override
+		public void mouseExited(MouseEvent arg0)
+		{
+			Person p = (Person) arg0.getSource();
+			p.setIcon(ICONS.iconss[p.getIcontype()]);
+			// System.out.println("222");
+			p.repaint();
+		}
+	}
+	public void setNewGame()
+	{
+		int icontype;
+		for (int i = 0; i < 10; i++)
+			for (int j = 0; j < 10; j++)
+			{
+				icontype = (int) (Math.random() * 3);
+				boxs[i][j].setIcontype(icontype);
+				boxs[i][j].setIcon(ICONS.iconpp[icontype]);
+			}
+		while (checkAll() > 0)
+		{
+			clearAll(0);
+			while (dropAll(0))
+			{
+				;
+			}
+		}
+	}
+	/**
+	 * <b>Create the panel.
+	 */
+	public PanelForXXL()
+	{
+		MouseHandler listener1 = new MouseHandler();
+		ButtonActionListener listener2 = new ButtonActionListener();
+		setLayout(null);
+		bottomButton.setSize(490, 5);
+		bottomButton.setLocation(0, 490);
+		add(bottomButton);
+		for (int i = 0; i < 10; i++)
+			for (int j = 0; j < 10; j++)
+			{
+				boxs[i][j] = new Person((int) (Math.random() * 3), 49, 49, i, j);
+				boxs[i][j].addMouseListener(listener1);
+				boxs[i][j].addActionListener(listener2);
+				add(boxs[i][j]);
+				boxs[i][j].setLocation(i * 49, j * 49);
+			}
+
+		// Set<String> set = new HashSet<String>();
+		// set.add("qq");
+		// set.add("pp");
+		// set.add("qq");
+		// for (Iterator<String> it = set.iterator(); it.hasNext();)
+		{
+			// System.out.println(it.next());
+		}
+		// subRowString(0);
+		// for (int i = 0; i < 10; i++)
+		{
+			// System.out.println(colString[i]);
+		}
+		while (checkAll() > 0)
+		{
+			clearAll(0);
+			while (dropAll(0))
+			{
+				;
+			}
+		}
+
+	}
+	Image bg = (PIC.background2);
+	@Override
+	protected void paintComponent(Graphics arg0)
+	{
+
+		arg0.drawImage(bg, 0, 0, null);
+		super.paintComponent(arg0);
+
+	}
+	private static final long serialVersionUID = 9106785028497495727L;
+	private Person[][] boxs = new Person[10][10];
+	private String[] rowString = new String[10];
+	private String[] colString = new String[10];
+	public void setRowString()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			rowString[i] = boxs[0][i].toString();
+		}
+		for (int j = 1; j < 10; j++)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				rowString[i] = rowString[i].concat(boxs[j][i].toString());
+			}
+		}
+
+	}
+	final static String[] match3 = {"000", "111", "222", "333", "444", "555",
+			"666", "777"};
+
+	public void subRowString(int icontype)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			for (int j = 1; j < 10 - 1; j++)
+			{
+				if (rowString[i].regionMatches(j - 1, match3[icontype], 0, 3))
+					;
+
+			}
+
+		}
+	}
+	public void setColString()
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			colString[i] = boxs[i][0].toString();
+		}
+		for (int j = 1; j < 10; j++)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				colString[i] = colString[i].concat(boxs[i][j].toString());
+			}
+		}
+	}
+	public boolean checkBlow(Person button)
+	{
+		int j = button.getLine();
+		int i = button.getColumn();
+		boolean flag1 = false;
+		boolean flag11 = false;
+		boolean flag12 = false;
+		boolean flag13 = false;
+		boolean flag2 = false;
+		boolean flag21 = false;
+		boolean flag22 = false;
+		boolean flag23 = false;
+		int icontype = button.getIcontype();
+		if (i > 1)
+		{
+			flag11 = (boxs[i - 1][j].getIcontype() == icontype && boxs[i - 2][j]
+					.getIcontype() == icontype);
+			if (flag11)
+				return true;
+		}
+		if (i < 8)
+		{
+			flag13 = (boxs[i + 1][j].getIcontype() == icontype && boxs[i + 2][j]
+					.getIcontype() == icontype);
+			if (flag13)
+				return true;
+		}
+		if (i > 0 && i < 9)
+		{
+			flag12 = (boxs[i - 1][j].getIcontype() == icontype && boxs[i + 1][j]
+					.getIcontype() == icontype);
+			if (flag12)
+				return true;
+		}
+		flag1 = flag11 || flag13 || flag12;
+		if (j > 1)
+		{
+			flag21 = (boxs[i][j - 1].getIcontype() == icontype && boxs[i][j - 2]
+					.getIcontype() == icontype);
+			if (flag21)
+				return true;
+
+		}
+		if (j < 8)
+		{
+			flag23 = (boxs[i][j + 2].getIcontype() == icontype && boxs[i][j + 1]
+					.getIcontype() == icontype);
+			if (flag23)
+				return true;
+
+		}
+		if (j > 0 && j < 9)
+		{
+			flag22 = (boxs[i][j - 1].getIcontype() == icontype && boxs[i][j + 1]
+					.getIcontype() == icontype);
+			if (flag22)
+				return true;
+
+		}
+		flag2 = flag21 || flag23 || flag22;
+		return flag2 || flag1;
+	}
+
+	Set<Person> set;
+	/**
+	 * <b>计算出可消除的个数
+	 * 
+	 * @return Size of Set
+	 */
+	public int checkAll()
+	{
+		set = new HashSet<Person>();
+		for (int i = 0; i < 10; i++)
+			for (int j = 0; j < 10; j++)
+			{
+				boxs[i][j].setBorderPainted(false);
+				if (checkBlow(boxs[i][j]))
+				{
+
+					boxs[i][j].setBorderPainted(true);
+					set.add(boxs[i][j]);
+					// 此处check过程不能有icon改动
+					// 必须先存好,再来改动icon
+
+				}
+			}
+		System.out.println("checkALL: " + set.size());
+		return set.size();
+	}
+	public void blowAll()
+	{
+
+		try
+		{
+			Thread.currentThread();
+			Thread.sleep(50);
+		} catch (Exception e)
+		{
+		}
+
+		for (Iterator<Person> it = set.iterator(); it.hasNext();)
+		{
+			// 此过程icon改动
+			Person p = it.next();
+			p.setBorderPainted(false);
+			p.setIcontype(9);
+			p.setIcon(ICONS.iconss[9]);
+		}
+		try
+		{
+			Thread.currentThread();
+			Thread.sleep(50);
+		} catch (Exception e)
+		{
+		}
+	}
+	public void clearAll()
+	{
+		MusicForXXL.playclear();
+		for (Iterator<Person> it = set.iterator(); it.hasNext();)
+		{
+			// 此过程icon改动
+			Person p = it.next();
+			p.setBorderPainted(false);
+			p.setIcontype(8);
+			p.setIcon(ICONS.iconss[8]);
+		}
+
+	}
+	public void clearAll(int notimer)
+	{
+
+		for (Iterator<Person> it = set.iterator(); it.hasNext();)
+		{
+			// 此过程icon改动
+			Person p = it.next();
+			p.setBorderPainted(false);
+			p.setIcontype(8);
+			p.setIcon(ICONS.iconss[8]);
+		}
+	}
+	/**
+	 * <b>这个掉落方法是整体下落,可读性比较差
+	 * 
+	 * @param col
+	 */
+	public void droponecolumn1(int col)
+	{
+
+		for (int j = 8; j >= 0; j--)
+		{
+			if (boxs[col][j + 1].getIcontype() == ICONS.blackicon)
+			{
+				for (int k = j + 1; k > 0; k--)
+				{
+					int icontype = boxs[col][k - 1].getIcontype();
+					boxs[col][k].setIcon(ICONS.iconpp[icontype]);
+					boxs[col][k].setIcontype(icontype);
+					if (k == 1)
+					{
+						icontype = (int) (Math.random() * 8);
+						boxs[col][0].setIcontype(icontype);
+						boxs[col][0].setIcon(ICONS.iconpp[icontype]);
+					}
+
+				}
+
+				return;
+			}
+		}
+		if (boxs[col][0].getIcontype() == ICONS.blackicon)
+		{
+			int icontype = (int) (Math.random() * 8);
+			boxs[col][0].setIcontype(icontype);
+			boxs[col][0].setIcon(ICONS.iconpp[icontype]);
+		}
+	}
+	public boolean dropAll(int notimer)
+	{
+		boolean flag = false;
+		for (int i = 0; i < 10; i++)
+		{
+			if (droponecolumn(i))
+				flag = true;
+		}
+		System.out.println("can Drop ? : " + flag);
+		return flag;
+	}
+
+	public boolean dropAll()
+	{
+
+		boolean flag = false;
+		for (int i = 0; i < 10; i++)
+		{
+			if (droponecolumn(i))
+				flag = true;
+		}
+		System.out.println("can Drop ? : " + flag);
+		return flag;
+	}
+	/**
+	 * <b>这个掉落方法比较好
+	 * 
+	 * @param col
+	 */
+	protected boolean droponecolumn(int col)
+	{
+		boolean flag = false;
+		for (int j = 8; j >= 0; j--)
+		{
+			/**
+			 * <b>下面顶层有空情况另外讨论
+			 */
+			if (boxs[col][j + 1].getIcontype() == ICONS.blackicon)
+			{
+				int icontype = boxs[col][j].getIcontype();
+				Icon icon = boxs[col][j].getIcon();
+				boxs[col][j + 1].setIcon(icon);
+				boxs[col][j + 1].setIcontype(icontype);
+				boxs[col][j].setIcon((ICONS.iconss[8]));
+				boxs[col][j].setIcontype(8);
+				flag = true;
+			}
+
+		}
+		/**
+		 * <b>下面是顶层有空的情况
+		 */
+		if (boxs[col][0].getIcontype() == ICONS.blackicon)
+		{
+			int icontype = (int) (Math.random() * 8);
+			boxs[col][0].setIcontype(icontype);
+			boxs[col][0].setIcon(ICONS.iconpp[icontype]);
+			flag = true;
+		}
+		return flag;
+	}
+
+	protected int droponecolumn2(int col)
+	{
+		int flag = 0;
+		for (int j = 9; j >= 0; j--)
+		{
+			if (boxs[col][j].getIcontype() == ICONS.blackicon)
+			{
+				flag = j;
+				
+			}
+
+		}
+		return flag;
+	}
+	JButton bottomButton = new JButton();
+
+	public void switchIcon(Person p1, Person p2)
+	{
+		if (p1.isAdjacentTo(p2))
+		{
+			int tempicontype = p1.getIcontype();
+			Icon tempicon = p1.getIcon();
+			p1.setIcontype(p2.getIcontype());
+			p1.setIcon(p2.getIcon());
+			p2.setIcontype(tempicontype);
+			p2.setIcon(tempicon);
+		}
+	}
+	public void switchIcon(Person p1, Person p2, int withpause)
+	{
+		if (p1.isAdjacentTo(p2))
+		{
+			try
+			{
+				Thread.currentThread();
+				Thread.sleep(50);
+			} catch (Exception e)
+			{
+			}
+			int tempicontype = p1.getIcontype();
+			Icon tempicon = p1.getIcon();
+			p1.setIcontype(p2.getIcontype());
+			p1.setIcon(p2.getIcon());
+			p2.setIcontype(tempicontype);
+			p2.setIcon(tempicon);
+		}
+	}
+
+}
+class Person extends JButton implements FocusListener
+{
+	public boolean isAdjacentTo(Person p)
+	{
+		if (this.equals(p))
+			return false;
+		if (1 >= (this.getLine() - p.getLine())
+				* (this.getLine() - p.getLine())
+				+ (this.getColumn() - p.getColumn())
+				* (this.getColumn() - p.getColumn()))
+			return true;
+		return false;
+	}
+	Person(int icontype, int width, int height, int x, int y)
+	{
+		super();
+		this.setLine(y);
+		this.setColumn(x);
+		this.setSize(width, height);
+		setIcontype(icontype);
+		setIcon(ICONS.iconpp[icontype]);
+		addFocusListener(this);
+		setBorder(BorderFactory.createLineBorder(Color.CYAN, 5));
+		setBorderPainted(false);
+
+	}
+
+	public boolean equals(Person p)
+	{
+		return (p.getLine() == this.getLine() && p.getColumn() == this
+				.getColumn());
+
+	}
+	public int getIcontype()
+	{
+		return icontype;
+	}
+	public void setIcontype(int icontype)
+	{
+		this.icontype = icontype;
+	}
+	public String toString()
+	{
+		return "" + getIcontype();
+	}
+	public void focusGained(FocusEvent e)
+	{
+		setBorderPainted(true);
+	}
+	public void focusLost(FocusEvent e)
+	{
+		setBorderPainted(false);
+	}
+	/**
+	 * *********************************************
+	 */
+	private static final long serialVersionUID = 8787631154804311924L;
+	int icontype;
+	int line;
+	int column;
+	// Color c = new Color(255, 245, 170);
+	public int getLine()
+	{
+		return line;
+	}
+	public void setLine(int line)
+	{
+		this.line = line;
+	}
+	public int getColumn()
+	{
+		return column;
+	}
+	public void setColumn(int column)
+	{
+		this.column = column;
+	}
+}
+
+class ICONS
+{
+	final static int redicon = 0;
+	final static int blueicon = 1;
+	final static int brownicon = 2;
+
+	final static int greenicon = 3;
+	final static int greyicon = 4;
+	final static int purpleicon = 5;
+	final static int yellowicon = 6;
+	final static int whiteicon = 7;
+
+	final static int blackicon = 8;
+	final static int bombicon = 9;
+	final static BufferedImage[] icons = {PIC.redqq, PIC.blueqq, PIC.brownqq,
+			PIC.greenqq, PIC.greyqq, PIC.purpleqq, PIC.yellowqq, PIC.whiteqq,
+			PIC.blackqq, PIC.bombqq};
+	final static ImageIcon[] iconss = {new ImageIcon(icons[0]),
+			new ImageIcon(icons[1]), new ImageIcon(icons[2]),
+			new ImageIcon(icons[3]), new ImageIcon(icons[4]),
+			new ImageIcon(icons[5]), new ImageIcon(icons[6]),
+			new ImageIcon(icons[7]), new ImageIcon(icons[8]),
+			new ImageIcon(icons[9])};
+	final static ImageIcon[] iconpp = {new ImageIcon(PIC.redpp),
+			new ImageIcon(PIC.bluepp), new ImageIcon(PIC.brownpp),
+			new ImageIcon(PIC.greenpp), new ImageIcon(PIC.greypp),
+			new ImageIcon(PIC.purplepp), new ImageIcon(PIC.yellowpp),
+			new ImageIcon(PIC.whitepp), new ImageIcon(PIC.blackpp)};
+}

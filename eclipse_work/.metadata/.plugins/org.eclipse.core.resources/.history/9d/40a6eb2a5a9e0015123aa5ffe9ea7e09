@@ -1,0 +1,44 @@
+package testsqlite;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+/**
+ * 这是个非常简单的SQLite的Java程序, 程序中创建数据库、创建表、然后插入数据， 最后读出数据显示出来
+ * 
+ * @author zieckey (http://zieckey.cublog.cn)
+ */
+public class TestSQLite {
+	public static void main(String[] args) {
+		/*** Connection对象 **/
+		Connection conn = null;
+		/*** 驱动名称 **/
+		String jdbcName = "org.sqlite.JDBC";
+		/*** 数据库地址 **/
+		String dbUrl = "jdbc:sqlite:ToXML.db";
+		try {
+			/*** 获取连接类 **/
+			Class.forName(jdbcName);
+			/** 加载并注册SQLServer2012的JDBC驱动 */
+			conn = DriverManager.getConnection(dbUrl);
+			/** 编写连接字符串，创建并获取连接 */
+			Statement stat = conn.createStatement();
+			stat.executeUpdate("create table tableA(num Int not null primary key ,info XML not null );");// 创建一个表，两列
+			
+
+			ResultSet rs = stat.executeQuery("select * from tbl1;"); // 查询数据
+			while (rs.next()) { // 将查询到的数据打印出来
+
+				System.out.print("name = " + rs.getString("name") + " "); // 列属性一
+				System.out.println("salary = " + rs.getString("salary")); // 列属性二
+			}
+			rs.close();
+			conn.close(); // 结束数据库的连接
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

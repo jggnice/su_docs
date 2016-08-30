@@ -1,0 +1,76 @@
+package ex1210;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+
+import ex16.PanelEx164;
+
+@SuppressWarnings("serial")
+public class Ex1210Frame extends JFrame {
+	private JPanel p1;
+	private JButton[][] buttons = new JButton[8][8];
+
+	/**
+	 * Create the frame.
+	 */
+	public Ex1210Frame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 450);
+		p1 = new JPanel();
+		add(p1);
+		p1.setLayout(new GridLayout(8, 8, 0, 0));
+		for (int i = 0; i < 8; i++)
+			for (int j = 0; j < 8; j++) {
+				buttons[i][j] = new JButton();
+				p1.add(buttons[i][j]);
+				if ((i + j) % 2 == 0)
+					buttons[i][j].setBackground(Color.WHITE);
+				else
+					buttons[i][j].setBackground(Color.BLACK);
+			}
+	}
+
+	public static void main(String[] args) {
+		//Ex1210Frame f1 = new Ex1210Frame();
+		//f1.setVisible(true);
+		//Ex1208Frame f2 = new Ex1208Frame();
+		//f2.setVisible(true);
+		JFrame f3 = new JFrame();
+		f3.add(new PanelEx164());
+		f3.setVisible(true);
+		f3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f3.setBounds(100, 100, 650, 200);
+	}
+}
+
+@SuppressWarnings("serial")
+class Ex1208Frame extends JFrame {
+	private JPanel p1;
+	private JLabel[] labels = new JLabel[6];
+	public Ex1208Frame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(550, 100, 450, 450);
+		p1 = new JPanel();
+		add(p1);
+		p1.setLayout(new GridLayout(2, 3, 0, 0));
+		String[] colors = {"black","blue","cyan","green","magenta","orange"};
+		Color[] colorss = {Color.BLACK,Color.BLUE,Color.CYAN,Color.GREEN,Color.MAGENTA,Color.ORANGE};
+		for(int i = 0; i < 6 ;i ++)
+		{
+			labels[i] = new JLabel(colors[i]);
+			labels[i].setFont(new Font("TimesRoman",Font.BOLD,20));
+			labels[i].setForeground(colorss[i]);
+			labels[i].setBackground(Color.WHITE);
+			labels[i].setBorder(new LineBorder(Color.YELLOW));
+			labels[i].setToolTipText(colors[i]);
+			p1.add(labels[i]);
+		}
+	}
+}

@@ -1,0 +1,64 @@
+/*package dbsql;
+
+import lei.NewUser;
+
+public class DataBase 
+{
+	private static String[] IDs = {"1307402001","1307402002","1307402003"};
+	private static String[] Codes = {"1307402001","1307402002","1307402003"};
+	private static String[] Names = {"1307402001","1307402002","1307402003"};
+	private static int[] types = {0,0,0};
+	private static String[] Sexes = {"男","男","男"};
+	private static String[] Specs = {"信息","信息","信息"};
+	
+	
+
+	*//**
+	 * @return a NewUser
+	 * ***SQL****
+	 * select (*) from Users
+	 * where ID=id
+	 * ***SQL****
+	 *//*		
+	public static NewUser getDataUser(String id)
+	{
+		int point=0;
+		while((IDs[point].equals(id))==false)
+		{
+			point++;if(point>=3)return null;
+		}
+		
+		
+		{
+			//System.out.println("log on user"+point);
+			NewUser dataUser = new NewUser(IDs[point],types[point],Names[point],Codes[point],Sexes[point],Specs[point]);
+			return dataUser;
+		}	
+		
+	}
+	
+	//***************Data modify********************************
+	*//**
+	 * @param codes the codes to set
+	 *//*
+	public static void setCodes(String[] codes) {
+		Codes = codes;
+	}
+
+	
+
+	*//**
+	 * @return the names
+	 *//*
+	public static String[] getNames() {
+		return Names;
+	}
+
+	*//**
+	 * @param names the names to set
+	 *//*
+	public static void setNames(String[] names) {
+		Names = names;
+	}
+}
+*/

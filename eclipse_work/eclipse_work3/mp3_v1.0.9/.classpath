@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/dom4j/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/mp3/jl1.0.jar"/>
+	<classpathentry kind="lib" path="lib/mp3/mp3spi1.9.4.jar"/>
+	<classpathentry kind="lib" path="lib/mp3/tritonus_share.jar"/>
+	<classpathentry kind="lib" path="lib/junit4/junit.jar"/>
+	<classpathentry kind="lib" path="lib/junit4/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+	<classpathentry kind="lib" path="lib/skin/substance.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

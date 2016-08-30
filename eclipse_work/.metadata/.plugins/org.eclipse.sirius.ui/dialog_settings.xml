@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExportRepresentationsAsImagesDialog">
+		<item value="JPG" key="ExportRepresentationsAsImagesDialog.imageFormat"/>
+		<list key="ExportRepresentationsAsImagesDialog.file">
+			<item value="D:\F_administer\F_desktop"/>
+			<item value="E:\su_docs\eclipse_work\UML1"/>
+			<item value="E:\su_docs\eclipse_work\UML1\Dashboard.jpg"/>
+		</list>
+	</section>
+</section>

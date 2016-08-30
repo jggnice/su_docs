@@ -1,0 +1,33 @@
+package cqu;
+
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+
+
+@SuppressWarnings("serial")
+public class GameFrame extends JFrame {
+	private GameCanvas canvas = new GameCanvas();
+
+	public GameFrame() {
+		canvas.setFocusable(true);
+		canvas.requestFocus();
+		this.add(canvas, BorderLayout.CENTER);
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		GameFrame frame = new GameFrame();
+		frame.setSize(400, 630);
+		
+		
+		frame.setIconImage(Resources.tombPNG);
+		frame.setTitle("TOMB SHOOT");
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+
+	}
+
+}

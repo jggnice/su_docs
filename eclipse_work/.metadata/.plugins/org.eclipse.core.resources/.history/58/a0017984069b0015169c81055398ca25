@@ -1,0 +1,14 @@
+package sortlist;
+
+import javax.swing.JPanel;
+
+public class MusicPanel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public MusicPanel() {
+
+	}
+
+}

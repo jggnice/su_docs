@@ -1,0 +1,73 @@
+package sortlist;
+
+import game.RTGamePanel;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.border.EmptyBorder;
+
+import myhuarongdao.HuaRongRoad;
+
+@SuppressWarnings("serial")
+public class FrameToHold extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FrameToHold frame = new FrameToHold();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 * @throws IOException 
+	 */
+	public FrameToHold() throws IOException {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosed(WindowEvent arg0) 
+			{
+				MusicPanel.mp.close();
+			}
+		});
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 500);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+		
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		contentPane.add(tabbedPane, BorderLayout.CENTER);
+		
+		JPanel panel = new FileSortPanel();
+		tabbedPane.addTab("\u7EDF\u8BA1\u8BCD\u9891", null, panel, null);
+		
+		JPanel panel_1 = new RTGamePanel();
+		tabbedPane.addTab("\u5C0F\u6E38\u620F", null, panel_1, null);
+		
+		JPanel panel_2 = new MusicPanel();
+		JPanel panel_3 = new HuaRongRoad(100);
+		tabbedPane.addTab("\u80CC\u666F\u97F3\u4E50", null, panel_2, null);
+		tabbedPane.addTab("\u80CC\u666F\u97F3\u4E50", null, panel_3, null);
+	}
+
+}

@@ -1,0 +1,13 @@
+package ex173;
+
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class PanelEx173 extends JPanel
+{
+	protected void paintComponent(Graphics g)
+	{
+		
+	}
+}

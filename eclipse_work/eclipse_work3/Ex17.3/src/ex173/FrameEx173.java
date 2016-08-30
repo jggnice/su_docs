@@ -1,0 +1,93 @@
+package ex173;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+@SuppressWarnings("serial")
+public class FrameEx173 extends JFrame
+{
+
+	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	PanelEx173 panel = new PanelEx173();
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable() {
+			public void run()
+			{
+				try
+				{
+					FrameEx173 frame = new FrameEx173();
+					frame.setVisible(true);
+				} catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FrameEx173()
+	{
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 550, 550);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(new BorderLayout(0, 0));
+
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		contentPane.add(panel, BorderLayout.CENTER);
+
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		contentPane.add(panel_1, BorderLayout.SOUTH);
+
+		JRadioButton rdbtnRed = new JRadioButton("Red");
+		rdbtnRed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				panel.setredlight();
+			}
+		});
+		buttonGroup.add(rdbtnRed);
+		panel_1.add(rdbtnRed);
+
+		JRadioButton rdbtnYellow = new JRadioButton("Yellow");
+		rdbtnYellow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				panel.setyellowlight();
+			}
+		});
+		buttonGroup.add(rdbtnYellow);
+		panel_1.add(rdbtnYellow);
+
+		JRadioButton rdbtnGreen = new JRadioButton("Green");
+		rdbtnGreen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0)
+			{
+				panel.setgreenlight();
+			}
+		});
+		buttonGroup.add(rdbtnGreen);
+		panel_1.add(rdbtnGreen);
+	}
+
+}

@@ -1,0 +1,15 @@
+1445259465429	Encapsulate field 'CourseID'
+1445259478093	Encapsulate field 'CourseName'
+1445259485620	Encapsulate field 'Credit'
+1445259493425	Encapsulate field 'Teacher'
+1445259500090	Encapsulate field 'Weekday'
+1445259505965	Encapsulate field 'Daytime'
+1445262969211	Encapsulate field 'courselist'
+1445320516408	Encapsulate field 'Description'
+1445322369846	Infer generic type arguments
+1445322702055	Delete element
+1445518834038	Encapsulate field 'UserID'
+1445518839982	Encapsulate field 'CourseID'
+1445518844958	Encapsulate field 'Grade'
+1445519950000	Delete element
+1445526143936	Encapsulate field 'CourseString'

@@ -1,0 +1,15 @@
+package sortlist;
+
+import javax.swing.JFrame;
+
+public class JustSort
+{
+	public static void main(String[] args)
+	{
+		JFrame f = new JFrame();
+		f.add(new FileSortPanel());
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setBounds(100, 100, 450, 500);
+	}
+}

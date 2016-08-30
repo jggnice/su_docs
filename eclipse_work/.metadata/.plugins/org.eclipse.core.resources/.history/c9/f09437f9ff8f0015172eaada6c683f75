@@ -1,0 +1,29 @@
+package not_file;
+
+import java.io.IOException;
+
+public class CreateFile {
+	public static int decode(String[] args) throws IOException {
+		/**
+		 * Read TXT
+		 */
+		java.io.FileInputStream file_txt = new java.io.FileInputStream(args[0]);
+		/**
+		 * Write binary
+		 */
+		java.io.FileOutputStream file1 = new java.io.FileOutputStream(args[1]);
+		while(file_txt.available()>0)
+		{
+			System.out.println(file_txt.read());
+		}
+		file_txt.close();
+		return 0;
+	}
+	public static void main(String[] args) throws IOException 
+	{
+		String[] file = new String[2];
+		file[0] = "Readme.txt";
+		file[1] = "for_int_bytes"
+		decode(file);
+	}
+}

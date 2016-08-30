@@ -1,0 +1,13 @@
+package sortlist;
+
+import javax.swing.JFrame;
+
+public class JustSort
+{
+	public static void main(String[] args)
+	{
+		JFrame f = new JFrame();
+		f.add(new FileSortPanel());
+		f.setVisible(true);
+	}
+}

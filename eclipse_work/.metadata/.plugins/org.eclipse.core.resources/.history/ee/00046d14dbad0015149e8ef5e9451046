@@ -1,0 +1,58 @@
+package testsqlite;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class TestSQLite1
+{
+	private static PreparedStatement psmt = null;
+	//private static Statement stat = null;
+	private static ResultSet rs = null;
+	public static void main(String[] args)
+	{
+		/*** Connection对象 **/
+		Connection conn = null;
+		/*** 驱动名称 **/
+		String jdbcName = "org.sqlite.JDBC";
+		/*** 数据库地址 **/
+		String dbUrl = "jdbc:sqlite:Dict.db";
+		try
+		{
+			/*** 获取连接类 **/
+			Class.forName(jdbcName);
+			/** 加载并注册SQLServer2012的JDBC驱动 */
+			conn = DriverManager.getConnection(dbUrl);
+			/** 编写连接字符串，创建并获取连接 */
+			//stat = conn.createStatement();
+			String word = "qu";
+			String data = "";
+			StringBuffer sb=new StringBuffer("select * from tableA where word is NULL ");
+			if(!("".equals(word.trim()))){
+				sb.append(" or  word like '%"+word+"%'");
+			}
+			if(!("".equals(data.trim()))){
+				sb.append(" and data like '%"+data+"%'");
+			}
+			psmt = conn.prepareStatement(sb.toString());
+
+			 rs =  psmt.executeQuery();
+			  while (rs.next()) 
+				{
+				  System.out.println(rs.getString("word")+"  "+rs.getString("data"));
+					//Vector<String> v = new Vector<String>();
+					//v.add(rs.getString("UserID"));
+					//v.add(rs.getString("UserName"));
+					//v.add(rs.getString("Spec"));
+					//dtm.addRow(v);
+				}
+			rs.close();
+			conn.close(); // 结束数据库的连接
+
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+}

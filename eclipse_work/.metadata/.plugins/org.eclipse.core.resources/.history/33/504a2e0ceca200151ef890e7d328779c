@@ -1,0 +1,9 @@
+package sortlist;
+
+public class JustSort
+{
+	public static void main(String[] args)
+	{
+		
+	}
+}

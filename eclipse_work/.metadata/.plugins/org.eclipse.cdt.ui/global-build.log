@@ -1,0 +1,530 @@
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+08:56:57 **** Incremental Build of configuration Debug for project MYCPP1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "future_net\\future_net.o" "..\\future_net\\future_net.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "future_net\\route.o" "..\\future_net\\route.cpp" 
+g++ -o MYCPP1.exe "future_net\\route.o" "future_net\\io.o" "future_net\\future_net.o" 
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+08:58:59 **** Incremental Build of configuration Debug for project MYCPP1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "future_net\\route.o" "..\\future_net\\route.cpp" 
+g++ -o MYCPP1.exe "future_net\\route.o" "future_net\\io.o" "future_net\\future_net.o" 
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+09:02:30 **** Incremental Build of configuration Debug for project MYCPP1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "future_net\\future_net.o" "..\\future_net\\future_net.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "future_net\\route.o" "..\\future_net\\route.cpp" 
+g++ -o MYCPP1.exe "future_net\\route.o" "future_net\\io.o" "future_net\\future_net.o" 
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+09:08:28 **** Incremental Build of configuration Debug for project MYCPP1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "future_net\\route.o" "..\\future_net\\route.cpp" 
+g++ -o MYCPP1.exe "future_net\\route.o" "future_net\\io.o" "future_net\\future_net.o" 
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+09:09:03 **** Incremental Build of configuration Debug for project MYCPP1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "future_net\\route.o" "..\\future_net\\route.cpp" 
+g++ -o MYCPP1.exe "future_net\\route.o" "future_net\\io.o" "future_net\\future_net.o" 
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+Info: Nothing to build for MYCPP1
+14:37:25 **** Rebuild of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+14:42:55 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+14:47:23 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+15:21:51 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+15:53:18 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:53:51 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:54:05 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:54:23 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:54:34 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:55:21 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:55:30 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:56:07 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:57:11 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+15:57:27 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+16:03:57 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+16:04:36 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+16:08:55 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+16:09:30 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+17:37:06 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+17:45:08 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+18:18:24 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+18:29:52 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+18:32:16 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+18:34:04 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+18:53:06 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+19:16:18 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+19:21:48 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+19:23:37 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+19:24:48 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+19:34:31 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+19:34:57 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+19:37:44 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+19:40:16 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+..\osmem.c: In function 'main':
+..\osmem.c:180:7: warning: unused variable 'cursor' [-Wunused-variable]
+   int cursor = 0;
+       ^
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+19:41:54 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+19:52:48 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+19:55:50 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:04:13 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:04:36 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:04:51 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:05:29 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:06:45 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:13:01 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:14:03 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:14:47 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:16:03 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:17:04 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:17:30 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+20:27:18 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:27:35 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:28:23 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+20:31:32 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:34:25 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:35:00 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:35:32 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:37:20 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+20:42:57 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+20:43:48 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+20:47:55 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:48:39 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+20:53:30 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+20:56:09 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:56:39 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:57:59 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+20:58:57 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+21:01:20 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+21:03:04 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+21:07:38 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+21:08:36 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+10:02:37 **** Rebuild of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+19:58:08 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+20:01:22 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+20:07:09 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+20:07:29 **** Incremental Build of configuration Debug for project OSmem ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o osmem.o "..\\osmem.c" 
+gcc -o OSmem.exe osmem.o 
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+Info: Nothing to build for OSmem
+16:45:06 **** Rebuild of configuration Debug for project PageSwap ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o page.o "..\\page.c" 
+gcc -o PageSwap.exe page.o 
+Info: Nothing to build for PageSwap
+Info: Nothing to build for PageSwap
+Info: Nothing to build for PageSwap
+17:04:42 **** Incremental Build of configuration Debug for project PageSwap ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o page.o "..\\page.c" 
+gcc -o PageSwap.exe page.o 
+Info: Nothing to build for PageSwap

@@ -1,0 +1,123 @@
+package sortlist;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.ListIterator;
+import java.util.Scanner;
+import java.util.Vector;
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+public class TestSort {
+
+	static java.io.File file = null;
+	static int limit = 10;
+
+	public static int getLimit() {
+		return limit;
+	}
+
+	public static void setLimit(int limit) {
+		TestSort.limit = limit;
+	}
+
+	public static void chooseFile() throws FileNotFoundException {
+
+		JFileChooser filechooser = new JFileChooser();
+		if (filechooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+			setFile(filechooser.getSelectedFile());
+		}
+	}
+
+	public static java.io.File getFile() {
+		return file;
+	}
+
+	public static void setFile(java.io.File file) {
+		TestSort.file = file;
+	}
+
+	static void startSortWords(DefaultTableModel dtm, java.io.File file1)
+			throws FileNotFoundException {
+		if (dtm == null || file1 == null) {
+			JOptionPane.showMessageDialog(null, "请先选择");
+			return;
+		}
+		Scanner in = new Scanner(file1);
+		ArrayList<Person> listA = new ArrayList<Person>();
+		for (; (in.hasNext());) {
+			boolean flag = false;
+			String buf = in.next();
+			clearPreStr(buf);
+			clearStr(buf);
+			clearStr(buf);
+			clearStr(buf);
+			clearStr(buf);
+			Person p1 = new Person(buf, 1);
+			for (Person p : listA) {
+				if (p.getName().equals((p1).getName())) {
+					p.setOrder(1 + p.getOrder());
+					flag = true;
+					break;
+				}
+			}
+			if (!flag) {
+				listA.add(p1);
+			}
+			Collections.sort(listA);
+
+		}
+		in.close();
+		ListIterator<Person> li = listA.listIterator();// 获得ListIterator对象
+		for (li = listA.listIterator(); li.hasNext();) {// 将游标定位到列表结尾
+			li.next();
+		}
+		int ii = 0;
+		for (; (ii < limit) && li.hasPrevious();) {// 逆序输出列表中的元素
+			Vector<String> v = new Vector<String>();
+			Person pp = li.previous();
+			v.add(pp.getName());
+			v.add("" + pp.getOrder());
+			dtm.addRow(v);
+			// System.out.print(pp + "\n");
+			ii++;
+		}
+	}
+
+	private static void clearPreStr(String[] buf)
+	{
+		if (buf[0] == null || buf[0].equals("")) 
+		{
+			buf[1] = buf [0];
+			return;
+		}
+
+		char ch = buf[0].charAt(0);
+		if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z') {
+			buf[1] = buf [0];
+		} else {
+			
+			buf[1] = buf[0].substring(1, buf[0].length());
+			
+		}
+	}
+	private static void clearStr(String buf) {
+		if (buf == null || buf.equals("")) {
+			return;
+		}
+
+		char ch = buf.charAt(buf.length() - 1);
+		if (ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z') {
+			;
+		} else {
+			System.out.println(buf);
+			String qq = buf.substring(0, buf.length() - 1);
+			buf = qq;
+			System.out.println(buf);
+		}
+
+	}
+}

@@ -1,0 +1,112 @@
+package youdid_student;
+
+import java.awt.GridLayout;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import youdid.ListTable;
+import youdid.OurFrame;
+import lei.Grade;
+import dbsql.DBsqlAttendCourse;
+
+@SuppressWarnings("serial")
+public class MyGradeList extends ListTable {
+	
+	private JPanel RowsTable;
+	final static int columns=2;	
+	private List<Grade> courselist;
+	private JLabel[][] rowslabel;
+	
+	
+	public JPanel getRowsTable() {
+		return RowsTable;
+	}
+
+
+	public MyGradeList()	
+	{
+		RowsTable = new JPanel();
+		RowsTable.setLayout(new GridLayout(amount, 0, columns, 0));
+		
+		int ii, jj;
+		rowslabel = new JLabel[amount][2];		
+		for(ii = 0;ii < amount; ii++)
+		{	
+			for(jj = 0; jj< columns; jj++)
+				rowslabel[ii][jj] = new JLabel("");
+			
+			RowsTable.add(rowslabel[ii][0]);
+			RowsTable.add(rowslabel[ii][1]);
+		}
+		addRowsTable(RowsTable);
+		selectFisrtPage();
+		
+	}
+	
+	
+	
+	@Override
+	protected	void addtionalAction() {}
+	@Override
+	protected	void selectlist(int a, int b) {
+		//ADD LIST TO PANEL
+		DBsqlAttendCourse sql1 = new DBsqlAttendCourse();
+		try {
+		courselist = sql1.showAttendList(amount,startline, OurFrame.logmain.getCurrentUser().getUserID());
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		//ADD LIST TO PANEL
+		for(int ii=0; ii < courselist.size();ii++)
+		{
+			Grade course ;//Grade grade ;
+			//DBsqlCourse sql2 = new DBsqlCourse();			
+			course = courselist.get(ii);
+			//course = sql2.selectCourse(grade.getCourseID());
+			rowslabel[ii][0].setText(course.getCourseID());
+			rowslabel[ii][1].setText(""+course.getGrade());
+			
+		}
+		for(int ii=courselist.size(); ii <amount ;ii++)
+		{
+			rowslabel[ii][0].setText("");
+			rowslabel[ii][1].setText("");
+		}		
+	}
+	
+	public void setNULL()
+	{
+		for(int ii = 0; ii <amount ;ii++)
+		{
+			rowslabel[ii][0].setText("");
+			rowslabel[ii][1].setText("");
+		}	
+	}
+	@Override
+	protected	 int getTotal() {
+		int a=0;
+		DBsqlAttendCourse sql1 = new DBsqlAttendCourse();
+		try {
+			a=sql1.getTotal(OurFrame.logmain.getCurrentUser().getUserID());
+			//System.out.println("__"+OurFrame.getCurrentUser());
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		//System.out.println("in SQL->"+a);
+		return a;
+	}	
+}
+
+/**
+ * create table Grade
+ 
+	(	UserID		varchar(10)		not null ,
+		CourseID	varchar(10)		not null ,
+		Gmark		int				null,
+	)
+*/

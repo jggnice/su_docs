@@ -1,0 +1,7 @@
+18:29:29 **** Rebuild of configuration Debug for project lsw15 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o lsw15.o "..\\lsw15.c" 
+gcc -o lsw15.exe lsw15.o 
+
+18:29:30 Build Finished (took 570ms)
+

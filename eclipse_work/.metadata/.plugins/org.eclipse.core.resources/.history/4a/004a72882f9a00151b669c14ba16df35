@@ -1,0 +1,14 @@
+package ex16;
+
+import javax.swing.JPanel;
+
+public class PanelEx164 extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public PanelEx164() {
+
+	}
+
+}
