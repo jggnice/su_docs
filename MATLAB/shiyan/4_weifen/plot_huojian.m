@@ -1,0 +1,10 @@
+clear;clc;
+ts=0:0.5:60;
+x0=[0,0];
+[t,x]=ode45(@huojian,ts,x0);
+figure(1)
+plot(t,x(:,2)),grid,xlabel('t'),ylabel('v');
+figure(2)
+plot(t,x(:,1)),grid,xlabel('t'),ylabel('x');
+height=x(end,1)
+vmax=x(end,2)

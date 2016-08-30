@@ -1,0 +1,15 @@
+sets:
+sm/1..5/:g1,g2,g3,f3,f2;
+endsets
+data:
+g1=0 4 6 7 7;
+g2=0 2 5 6 8;
+g3=0 3 5 7 8;
+enddata
+!index must all plus 1;
+@for(sm(i):f3(i)=@max(sm(j)|j#le#i:g3(j)))
+;!index must all plus 1;
+@for(sm(i):f2(i)=@max(sm(j)|j#le#i:g2(j)+f3(i+1-j)))
+;!index must all plus 1;
+f1_5=@max(sm(j)|j#le#5:g1(j)+f2(5+1-j))
+;!index must all plus 1;

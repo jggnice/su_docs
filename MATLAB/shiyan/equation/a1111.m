@@ -1,0 +1,1 @@
+fzero(@(a)(cos(a)).^3+4*cos(a)-1,[0 pi])

@@ -1,0 +1,9 @@
+ts=0:0.1:15;
+x0=[25,2];
+[t,x]=ode45(@shier,ts,x0);
+figure(1);plot(t,x),grid;
+title('r=0.5;d=0.5;a=0.1;b=0.02;')
+gtext(''),gtext('');legend('x(t)','y(t)');
+figure(2);plot(x(:,1),x(:,2)),grid;legend('xiangtu');
+xlabel('x'),ylabel('y')
+title('r=0.5;d=0.5;a=0.1;b=0.02;')
